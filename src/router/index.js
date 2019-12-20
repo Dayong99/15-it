@@ -1,31 +1,44 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
+const HomeContainer = () => import('../components/tabbar/HomeContainer')
+const MemberContainer = () => import('../components/tabbar/MemberContainer')
+const ShopContainer = () => import('../components/tabbar/ShopContainer')
+const SearchContainer = () => import('../components/tabbar/SearchContainer')
+
+// 1.安装插件
 Vue.use(VueRouter)
 
+// 2.创建router
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: Home
+    path:'',
+    redirect:'/home'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
+    path: '/home',
+    component: HomeContainer
+  },
+  {
+    path: '/member',
+    component: MemberContainer
+  },
+  {
+    path: '/shopcar',
+    component: ShopContainer
+  },
+  {
+    path: '/search',
+    component: SearchContainer
   }
 ]
 
 const router = new VueRouter({
+  routes,
   mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+  // 覆盖默认高亮属性router-link-active为mui中的mui-active属性
+  linkActiveClass: 'mui-active'
 })
+
 
 export default router
