@@ -5,6 +5,8 @@ const HomeContainer = () => import('../components/tabbar/HomeContainer')
 const MemberContainer = () => import('../components/tabbar/MemberContainer')
 const ShopContainer = () => import('../components/tabbar/ShopContainer')
 const SearchContainer = () => import('../components/tabbar/SearchContainer')
+const NewsList = () => import('../components/news/NewsList')
+import NewsInfo from '../components/news/NewsInfo'
 
 // 1.安装插件
 Vue.use(VueRouter)
@@ -30,6 +32,14 @@ const routes = [
   {
     path: '/search',
     component: SearchContainer
+  },
+  {
+    path: '/home/newslist',
+    component: NewsList
+  },
+  {
+    path: '/home/newsinfo/:id',
+    component: NewsInfo
   }
 ]
 

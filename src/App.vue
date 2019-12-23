@@ -2,7 +2,7 @@
   <div class="app-container">
 
 <!--    顶部 Header 区域-->
-    <mt-header fixed title="fixed top"></mt-header>
+    <mt-header fixed title="日新报"></mt-header>
 
     <!--    中间的 路由 router-view 区域-->
     <transition name="slide-fade">
@@ -36,8 +36,9 @@
 
 <style>
   .app-container {
-    padding-top: 40px;
-    overflow-x: hidden;
+      padding-top: 40px;
+      padding-bottom: 50px;
+      overflow-x: hidden;
   }
 
   .slide-fade-enter,
