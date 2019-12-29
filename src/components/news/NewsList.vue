@@ -32,7 +32,6 @@
     methods: {
       getNews() {
         getNews().then(res => {
-          console.log(res)
           this.newslist = res.data.message
         })
       },

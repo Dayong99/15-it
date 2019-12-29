@@ -6,7 +6,13 @@ const MemberContainer = () => import('../components/tabbar/MemberContainer')
 const ShopContainer = () => import('../components/tabbar/ShopContainer')
 const SearchContainer = () => import('../components/tabbar/SearchContainer')
 const NewsList = () => import('../components/news/NewsList')
-import NewsInfo from '../components/news/NewsInfo'
+const NewsInfo = () => import( '../components/news/NewsInfo')
+const PhotoList = () => import( '../components/photos/PhotoList')
+const PhotoInfo = () => import('../components/photos/PhotoInfo')
+const GoodsList = () => import('../components/goods/GoodsList')
+const GoodsInfo = () => import('../components/goods/GoodsInfo')
+const GoodsDesc = () => import('../components/goods/GoodsDesc')
+const GoodsComment = () => import('../components/goods/GoodsComment')
 
 // 1.安装插件
 Vue.use(VueRouter)
@@ -40,6 +46,32 @@ const routes = [
   {
     path: '/home/newsinfo/:id',
     component: NewsInfo
+  },
+  {
+    path: '/home/photolist',
+    component: PhotoList
+  },
+  {
+    path: '/home/photoinfo/:id',
+    component: PhotoInfo
+  },
+  {
+    path: '/home/goodslist',
+    component: GoodsList
+  },
+  {
+    path: '/home/goodsinfo/:id',
+    component: GoodsInfo
+  },
+  {
+    path: '/home/goodsdesc/:id',
+    component: GoodsDesc,
+    name: 'goodsdesc'
+  },
+  {
+    path: '/home/goodscomment/:id',
+    component: GoodsComment,
+    name: 'goodscomment'
   }
 ]
 
