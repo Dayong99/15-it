@@ -104,7 +104,21 @@
         this.$router.push({ name: "goodscomment", params: { id }})
       },
       addToShopCar() {
-      this.ballFlag = !this.ballFlag
+        this.ballFlag = !this.ballFlag
+        /**
+         * 点击加入购物车时，拼接出一个要保存到store中car数组里的商品信息对象
+         * @type {{price: *, count: number, id: (default.$route.params.id|string), selected: boolean}}
+         */
+        var goodsinfo = {
+          id: this.id,
+          count: this.selectedCount,
+          price: this.goodsinfo.sell_price,
+          selected: true
+        }
+        /**
+         * 将goodsinfo提交到Vuex中的mutations中的addToCar方法中去
+         */
+        this.$store.commit('addToCar', goodsinfo)
       },
       beforeEnter(el) {
         el.style.transform = "translate(0, 0)"
