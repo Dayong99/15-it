@@ -51,8 +51,6 @@
             </div>
         </div>
 
-        <p>{{ this.$store.getters.getGoodsSelected }}</p>
-
     </div>
 </template>
 
